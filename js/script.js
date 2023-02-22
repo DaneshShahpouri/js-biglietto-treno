@@ -31,6 +31,8 @@ if (user_eta <= 18) {
     old_discount = ticket_price / 100 * 40;
     discount_ticket = ticket_price - teen_discount;
     
+}else{
+    discount_ticket = discount_ticket
 };
 
 paragraph.innerHTML = discount_ticket.toFixed(2) + " euro";
