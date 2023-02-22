@@ -24,13 +24,17 @@ if (isNaN(user_distance) || user_distance === null){
     paragraph.innerHTML = "per favore inserisci un numero superiore allo zero"
 }else{
 
-
     let ticket_price = user_distance * 0.21;
-    let user_eta = parseInt(prompt("Qual è la tua età?"));
+
+    let user_eta = prompt("Qual è la tua età?");
     let teen_discount;
     let old_discount;
     let discount_ticket;
     
+    while(isNaN(user_eta) || user_eta == "")
+    {
+        user_eta = prompt("per favore inserisci un numero")
+    }
     
     if (user_eta <= 18) {
     
@@ -47,5 +51,5 @@ if (isNaN(user_distance) || user_distance === null){
     };
     
     paragraph.innerHTML = discount_ticket.toFixed(2) + " euro";
-    
+
 }
