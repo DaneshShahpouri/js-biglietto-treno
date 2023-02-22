@@ -19,7 +19,7 @@ let user_eta = parseInt(prompt("Qual è la tua età?"));
 let teen_discount;
 let old_discount;
 let discount_ticket;
-let paragraph = document.getElementById("prezzo-container")
+let paragraph = document.getElementById("prezzo-container");
 
 if (user_eta <= 18) {
 
@@ -32,7 +32,7 @@ if (user_eta <= 18) {
     discount_ticket = ticket_price - teen_discount;
     
 }else{
-    discount_ticket = discount_ticket
+    discount_ticket = ticket_price;
 };
 
 paragraph.innerHTML = discount_ticket.toFixed(2) + " euro";
