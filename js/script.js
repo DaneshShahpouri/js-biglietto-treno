@@ -25,16 +25,12 @@ if (user_eta <= 18) {
 
     teen_discount = ticket_price / 100 * 20;
     discount_ticket = ticket_price - teen_discount;
-    paragraph.innerHTML = discount_ticket.toFixed(2) + " euro"
 
 } else if (user_eta >= 65){
 
     old_discount = ticket_price / 100 * 40;
     discount_ticket = ticket_price - teen_discount;
-    paragraph.innerHTML = discount_ticket.toFixed(2) + " euro"
+    
+};
 
-}else{
-
-    paragraph.innerHTML = ticket_price.toFixed(2) + " euro"
-
-}
+paragraph.innerHTML = discount_ticket.toFixed(2) + " euro";
