@@ -16,7 +16,6 @@ document.write(
 let user_distance = parseInt(prompt("Indica il numero dei Km che vuoi percorrere in treno"));
 let paragraph = document.getElementById("prezzo-container");
 
-console.log(user_distance)
 
 if (isNaN(user_distance) || user_distance === null){
     paragraph.innerHTML = "per favore inserisci un numero nel campo della distanza"
@@ -27,6 +26,7 @@ if (isNaN(user_distance) || user_distance === null){
     let ticket_price = user_distance * 0.21;
 
     let user_eta = prompt("Qual è la tua età?");
+
     let teen_discount;
     let old_discount;
     let discount_ticket;
