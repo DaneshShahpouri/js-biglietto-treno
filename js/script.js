@@ -14,25 +14,38 @@ document.write(
 
 //Funzione
 let user_distance = parseInt(prompt("Indica il numero dei Km che vuoi percorrere in treno"));
-let ticket_price = user_distance * 0.21;
-let user_eta = parseInt(prompt("Qual è la tua età?"));
-let teen_discount;
-let old_discount;
-let discount_ticket;
 let paragraph = document.getElementById("prezzo-container");
 
-if (user_eta <= 18) {
+console.log(user_distance)
 
-    teen_discount = ticket_price / 100 * 20;
-    discount_ticket = ticket_price - teen_discount;
-
-} else if (user_eta >= 65){
-
-    old_discount = ticket_price / 100 * 40;
-    discount_ticket = ticket_price - teen_discount;
-    
+if (isNaN(user_distance) || user_distance === null){
+    paragraph.innerHTML = "per favore inserisci un numero nel campo della distanza"
+}else if(user_distance < 0){
+    paragraph.innerHTML = "per favore inserisci un numero superiore allo zero"
 }else{
-    discount_ticket = ticket_price;
-};
 
-paragraph.innerHTML = discount_ticket.toFixed(2) + " euro";
+
+    let ticket_price = user_distance * 0.21;
+    let user_eta = parseInt(prompt("Qual è la tua età?"));
+    let teen_discount;
+    let old_discount;
+    let discount_ticket;
+    
+    
+    if (user_eta <= 18) {
+    
+        teen_discount = ticket_price / 100 * 20;
+        discount_ticket = ticket_price - teen_discount;
+    
+    } else if (user_eta >= 65){
+    
+        old_discount = ticket_price / 100 * 40;
+        discount_ticket = ticket_price - old_discount;
+        
+    }else{
+        discount_ticket = ticket_price;
+    };
+    
+    paragraph.innerHTML = discount_ticket.toFixed(2) + " euro";
+    
+}
